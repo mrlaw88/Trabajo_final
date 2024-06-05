@@ -21,11 +21,28 @@ if (isset($_POST['id_pago'])) {
         // Crear un nuevo PDF utilizando FPDF
         $pdf = new FPDF();
         $pdf->AddPage();
+
+        // Añadir el logo de la empresa
+        $pdf->Image('../img/gimlogo.png', 10, 10, 30); // Ajusta la ruta y el tamaño según sea necesario
+
+        // Información de la empresa
+        $pdf->SetFont('Arial', 'B', 16);
+        $pdf->Cell(0, 10, 'EstudioFit', 0, 1, 'C');
+        $pdf->SetFont('Arial', '', 12);
+        $pdf->Cell(0, 10, 'Alejandro Law Roca', 0, 1, 'C');
+        $pdf->Cell(0, 10, 'Telefono: 622076884', 0, 1, 'C');
+        $pdf->Cell(0, 10, 'Calle San Pablo, Torrevieja (Alicante)', 0, 1, 'C');
+        $pdf->Cell(0, 10, 'DNI: 48628979X', 0, 1, 'C');
+        $pdf->Cell(0, 10, 'Email: law.roca.alejandro@gmail.com', 0, 1, 'C');
+        $pdf->Ln(10);
+
+        // Título de la factura
         $pdf->SetFont('Arial', 'B', 16);
         $pdf->Cell(0, 10, 'Factura', 0, 1, 'C');
         $pdf->Ln(10);
 
         // Información del cliente
+        $pdf->Cell(0, 10, 'ID Pago: ' . $pago['id_pago'], 0, 1);
         $pdf->SetFont('Arial', '', 12);
         $pdf->Cell(0, 10, 'Nombre: ' . $pago['nombre'], 0, 1);
         $pdf->Cell(0, 10, 'Apellidos: ' . $pago['apellidos'], 0, 1);
@@ -33,7 +50,7 @@ if (isset($_POST['id_pago'])) {
         $pdf->Ln(10);
 
         // Información del pago
-        $pdf->Cell(0, 10, 'ID Pago: ' . $pago['id_pago'], 0, 1);
+    
         $pdf->Cell(0, 10, 'Fecha de Pago: ' . date2string($pago['fecha_pago']), 0, 1);
         $pdf->Cell(0, 10, 'Fecha Fin: ' . date2string($pago['fecha_fin']), 0, 1);
         $pdf->Cell(0, 10, 'Cantidad: ' . $pago['cantidad_pagada'], 0, 1);
