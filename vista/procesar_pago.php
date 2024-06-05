@@ -67,6 +67,7 @@ include "fecha.php";
 // Recuperar datos del formulario
 $id_cliente = $_POST["id_cliente"];
 $fecha_pago = $_POST['fecha_pago'];
+$tipo_tarifa = $_POST['tipo_tarifa'];
 $cantidad_pagada = $_POST['cantidad_pagada'];
 $fecha_fin = date('Y-m-d', strtotime($fecha_pago . ' +1 month'));
 $forma_pago = $_POST['forma_pago'];
