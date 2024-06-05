@@ -1,4 +1,10 @@
 <?php
+// Mostrar todos los errores
+error_reporting(E_ALL);
+
+// Habilitar la visualización de errores
+ini_set('display_errors', 1);
+
 include "sesion.php";
 include "conexion.php";
 include "./funciones/fecha.php";
@@ -86,6 +92,7 @@ include "saludo.php";
                             <th>Fecha Fin</th>
                             <th>Cantidad</th>
                             <th>Forma de Pago</th>
+                            <th>Descargar Factura</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -98,6 +105,12 @@ include "saludo.php";
                                 <td><?php echo date2string($pago['fecha_fin']); ?></td>
                                 <td><?php echo htmlspecialchars($pago['cantidad_pagada'], ENT_QUOTES, 'UTF-8'); ?></td> 
                                 <td><?php echo htmlspecialchars($pago['forma_pago'], ENT_QUOTES, 'UTF-8'); ?></td> 
+                                <td>
+                                    <form action="generar_factura.php" method="post" target="_blank">
+                                        <input type="hidden" name="id_pago" value="<?php echo htmlspecialchars($pago['id_pago'], ENT_QUOTES, 'UTF-8'); ?>">
+                                        <button type="submit" class="btn btn-primary">Descargar PDF</button>
+                                    </form>
+                                </td>
                             </tr>
                         <?php
                         }
