@@ -1,0 +1,15 @@
+body {
+    text-align: center;
+    padding: 20px;
+}
+
+table {
+    margin: 0 auto;
+    margin-bottom: 10px;
+    text-align: left;
+    border-collapse: separate;
+}
+
+h1 {
+    text-align: center;
+}

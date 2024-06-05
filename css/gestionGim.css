@@ -1,0 +1,51 @@
+
+
+.menu .box {
+    padding: 50px 30px;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    transition: all ease-in-out 0.3s;
+    background: #130606;
+  }
+  
+  .menu .box span {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    color: #cda45e;
+  }
+  
+  .menu .box h4 {
+    font-size: 24px;
+    font-weight: 600;
+    padding: 0;
+    margin: 20px 0;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .menu .box p {
+    color: #aaaaaa;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu .box:hover {
+    background: #cda45e;
+    padding: 30px 30px 70px 30px;
+    box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
+  }
+  
+  .menu .box:hover span,
+  .menu .box:hover h4,
+  .menu .box:hover p {
+    color: #fff;
+  }
+
+  .menu, .contacto, .reservas, footer{
+    margin-top: 50px;
+  }
+
+  footer{
+    padding-top: 20px;
+  }
+  
